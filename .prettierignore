@@ -1,0 +1,35 @@
+##### LA JAVANESS - AUTOMATICALLY GENERATED #####
+## DO NOT EDIT MANUALLY.
+## RUN `ljn dotfiles update` TO UPDATE YOUR LOCAL COPY.
+
+# Build
+/build/
+/dist/
+
+# NPM
+node_modules
+package-lock.json
+
+# VS Code
+.vscode/*
+
+# Jest and generic test utilities
+/coverage/
+__snapshots__/
+
+# Cypress
+/cypress/screenshots
+/cypress/videos
+
+# Istanbul
+/.nyc_output/*
+
+# SonarQube
+/.scannerwork/*
+
+# LJN Generated Files
+/.dotfiles/
+/src/setupTestsShared.js
+/scripts/
+
+##### LA JAVANESS - AUTOMATICALLY GENERATED END #####

@@ -1,0 +1,17 @@
+{
+	"monorepo": "Not a monorepo",
+	"frontOrBack": "Front-end",
+	"srcDir": "src",
+	"repositoryName": "xstyled-theme-utils",
+	"projectType": "JS library",
+	"isLibrary": true,
+	"isApp": false,
+	"isCli": false,
+	"withCypress": false,
+	"withReact": false,
+	"withBabel": true,
+	"binName": "",
+	"withStyledComponents": true,
+	"withTypescript": false,
+	"extensions": ".js,.jsx,.ts,.tsx"
+}

@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"declaration": true,
+		"declarationDir": "./build",
+		"esModuleInterop": true,
+		"moduleResolution": "node",
+		"outDir": "./build",
+		"sourceMap": true,
+		"jsx": "react",
+		"target": "ES5",
+		"baseUrl": ".",
+		"paths": {
+			"*": ["src/*"]
+		}
+	},
+	"awesomeTypescriptLoaderOptions": {
+		"useCache": true,
+		"useBabel": true,
+		"babelOptions": {
+			"babelrc": false,
+			"presets": [["@babel/preset-env", { "targets": "last 2 versions, not dead, ie >= 10", "modules": false }]]
+		},
+		"babelCore": "@babel/core"
+	},
+	"include": ["src/*", "src/**/*"],
+	"exclude": ["build", "dist", "node_modules"]
+}

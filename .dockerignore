@@ -1,0 +1,49 @@
+##### LA JAVANESS - AUTOMATICALLY GENERATED #####
+## DO NOT EDIT MANUALLY.
+## RUN `ljn dotfiles update` TO UPDATE YOUR LOCAL COPY.
+
+# Non-build assets
+*/cypress/
+*/docs/
+*/mocks/
+*.md
+
+# NPM
+node_modules
+package-lock.json
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+ljn-dotfiles-*.log
+
+# Jest
+coverage/
+__snapshots__/
+
+# Istanbul
+/.nyc_output/*
+
+# SonarQube
+/.scannerwork/*
+
+# Git
+*/.git/
+.gitignore
+
+# Docker & CI
+Dockerfile
+bitbucket-pipelines.yml
+
+# Other tooling config
+.mockyeah.json
+.prettierignore
+.prettierrc
+cypress.json
+tsconfig.json
+
+# Environment should be provided by Docker on Docker, for safety reasons
+.env*
+
+##### LA JAVANESS - AUTOMATICALLY GENERATED END #####
