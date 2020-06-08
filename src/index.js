@@ -62,7 +62,12 @@ export default {
 		}
 	},
 
-	withXstyledThemeJest: (themeName) => {
+	withXstyledThemeJest: (
+		themeName,
+		options = {
+			modulesToTransform: [],
+		}
+	) => {
 		return (config) => {
 			const xtConfig = {
 				...config,
@@ -72,6 +77,21 @@ export default {
 				...(config.moduleNameMapper || {}),
 				'^~theme/(.*)': `<rootDir>/node_modules/${themeName}/dist/$1`,
 			}
+
+			xtConfig.transformIgnorePatterns = (xtConfig.transformIgnorePatterns || []).filter(
+				(pattern) =>
+					![
+						'<rootDir>/node_modules/',
+						'<rootDir>/node_modules',
+						'/node_modules/',
+						'/node_modules',
+						'node_modules/',
+						'node_modules',
+					].includes(pattern)
+			)
+
+			const modulesToTransform = [...options.modulesToTransform, themeName]
+			xtConfig.transformIgnorePatterns.push(`<rootDir>/node_modules/(?!${modulesToTransform.join('|')})`)
 
 			return xtConfig
 		}
