@@ -1,5 +1,10 @@
 export default {
-	withXstyledThemeWebpack: (themeName) => {
+	withXstyledThemeWebpack: (
+		themeName,
+		options = {
+			externals: false,
+		}
+	) => {
 		return (config) => {
 			const xtConfig = {
 				...config,
@@ -31,6 +36,26 @@ export default {
 			xtConfig.resolve.alias = {
 				...(config.resolve.alias || {}),
 				'~theme': `${themeName}/dist`,
+			}
+
+			if (options.externals) {
+				xtConfig.externals = [
+					config.externals || false,
+					{
+						react: 'react',
+						'react-dom': 'react-dom',
+						'styled-components': 'styled-components',
+						'@xstyled/core': '@xstyled/core',
+						'@xstyled/styled-components': '@xstyled/styled-components',
+						'@xstyled/system': '@xstyled/system',
+					},
+					(context, request, callback) => {
+						if (request.startsWith('~theme')) {
+							return callback(null, request)
+						}
+						return callback()
+					},
+				].filter(Boolean)
 			}
 
 			return xtConfig
