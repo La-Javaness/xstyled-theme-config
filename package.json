@@ -6,23 +6,25 @@
 	"license": "MIT",
 	"author": "La Javaness <dev@lajavaness.com>",
 	"main": "build/index.js",
-	"files": {
-		"0": "build"
-	},
+	"files": [
+		"build"
+	],
 	"scripts": {
 		"build": "node scripts/build.js",
 		"build:ci": "cross-env CI=true yarn build:prod",
 		"build:next": "cross-env LJN_ENV=next yarn build",
 		"build:prod": "cross-env LJN_ENV=production yarn build",
 		"build:staging": "cross-env LJN_ENV=staging yarn build",
-		"lint": "yarn eslint --ext .js,.jsx,.ts,.tsx src",
+		"lint": "yarn eslint --ext .js,.jsx app",
 		"lint:fix": "yarn lint --fix",
 		"prepublishOnly": "yarn test:ci && yarn build:ci",
 		"prettier": "scripts/precommitHookPrettier.sh",
-		"prettier:check": "npx prettier \"*/**/*.{js,jsx,ts,tsx,json,rc}\" --ignore-path ./.prettierignore --check",
-		"prettier:fix": "npx prettier \"*/**/*.{js,jsx,ts,tsx,json,rc}\" --ignore-path ./.prettierignore --write",
+		"prettier:check": "npx prettier \"*/**/*.{js,jsx,ts,tsx,json,rc}\" --check",
+		"prettier:fix": "npx prettier \"*/**/*.{js,jsx,ts,tsx,json,rc}\" --write",
 		"test": "node scripts/test.js -u",
-		"test:ci": "cross-env CI=true yarn test -b --watchAll=false --verbose --bail"
+		"test:ci": "cross-env CI=true yarn test -b --watchAll=false --verbose --bail",
+		"test:ci:coverage": "yarn test:ci --coverage",
+		"test:coverage": "yarn test --coverage --watchAll=false"
 	},
 	"resolutions": {
 		"@typescript-eslint/eslint-plugin": "2.14.0",
@@ -31,9 +33,9 @@
 		"typescript": "3.7"
 	},
 	"dependencies": {
-		"@babel/runtime": "^7.10.1",
 		"@babel/preset-env": "^7.10.2",
 		"@babel/preset-typescript": "^7.10.1",
+		"@babel/runtime": "^7.10.1",
 		"babel-loader": "^8.1.0"
 	},
 	"devDependencies": {

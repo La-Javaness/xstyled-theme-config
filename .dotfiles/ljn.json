@@ -1,9 +1,6 @@
 {
-	"monorepo": "Not a monorepo",
-	"frontOrBack": "Front-end",
 	"srcDir": "src",
 	"repositoryName": "xstyled-theme-utils",
-	"projectType": "JS library",
 	"isLibrary": true,
 	"isApp": false,
 	"isCli": false,
@@ -13,5 +10,16 @@
 	"binName": "",
 	"withStyledComponents": true,
 	"withTypescript": false,
-	"extensions": ".js,.jsx,.ts,.tsx"
+	"extensions": ".js,.jsx",
+	"monorepo": "NO_MONOREPO",
+	"frontOrBack": "FRONTEND",
+	"projectType": "LIBRARY",
+	"styleStack": [
+		"XSTYLED_THEME",
+		"XSTYLED",
+		"STYLED_COMPONENTS"
+	],
+	"withXstyledTheme": true,
+	"withSASSLoaders": false,
+	"withCSSLoaders": false
 }

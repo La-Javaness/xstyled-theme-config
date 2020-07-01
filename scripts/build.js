@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 process.env.BABEL_ENV = 'production'
 process.env.NODE_ENV = 'production'
-process.on('unhandledRejection', err => {
+process.on('unhandledRejection', (err) => {
 	throw err
 })
 
@@ -10,7 +11,7 @@ const chalk = require('chalk')
 const fs = require('fs-extra')
 const webpack = require('webpack')
 
-const configFactory = require('../.dotfiles/config/webpack.config')
+const configFactory = require('../webpack.config.js')
 const paths = require('../.dotfiles/config/paths')
 const formatWebpackMessages = require('react-dev-utils/formatWebpackMessages')
 const FileSizeReporter = require('react-dev-utils/FileSizeReporter')
@@ -22,8 +23,6 @@ const printFileSizesAfterBuild = FileSizeReporter.printFileSizesAfterBuild
 const WARN_AFTER_BUNDLE_GZIP_SIZE = 512 * 1024
 const WARN_AFTER_CHUNK_GZIP_SIZE = 1024 * 1024
 
-const config = configFactory('production')
-
 function copyPublicFolder() {
 	if (fs.existsSync(paths.appPublic)) {
 		fs.copySync(paths.appPublic, paths.appBuild, {
@@ -32,7 +31,7 @@ function copyPublicFolder() {
 	}
 }
 
-function build(previousFileSizes) {
+function build(config, previousFileSizes) {
 	console.log('Creating an optimized production build...')
 
 	const compiler = webpack(config)
@@ -82,11 +81,13 @@ function build(previousFileSizes) {
 
 try {
 	;(async () => {
+		const config = await configFactory(process.env.NODE_ENV)
+
 		const previousFileSizes = await measureFileSizesBeforeBuild(paths.appBuild)
 		fs.emptyDirSync(paths.appBuild)
 		copyPublicFolder()
 
-		const { stats, warnings } = await build(previousFileSizes)
+		const { stats, warnings } = await build(config, previousFileSizes)
 
 		if (warnings.length) {
 			console.log(chalk.yellow('Compiled with warnings.\n'))

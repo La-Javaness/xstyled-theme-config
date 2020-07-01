@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { resolveModuleName } = require('ts-pnp')
 
 exports.resolveModuleName = (typescript, moduleName, containingFile, compilerOptions, resolutionHost) => {

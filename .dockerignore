@@ -11,6 +11,8 @@
 # NPM
 node_modules
 package-lock.json
+/.pnp
+.pnp.js
 
 # Logs
 npm-debug.log*
@@ -43,7 +45,8 @@ bitbucket-pipelines.yml
 cypress.json
 tsconfig.json
 
-# Environment should be provided by Docker on Docker, for safety reasons
-.env*
+# Keep environment files as apps use them to customise builds per target, but
+# remove local developer files
+.env*local
 
 ##### LA JAVANESS - AUTOMATICALLY GENERATED END #####

@@ -2,6 +2,9 @@ module.exports = {
 	parserOptions: {
 		ecmaVersion: 2019,
 	},
+  plugins: [
+		'sort-imports-es6-autofix',
+  ],
 	extends: ['airbnb-base', 'plugin:prettier/recommended'],
 	rules: {
 		radix: ['error', 'as-needed'],
@@ -10,6 +13,8 @@ module.exports = {
 		'no-plusplus': 0,
 		'no-underscore-dangle': 0,
 		'no-use-before-define': ['error', { functions: false, classes: true, variables: true }],
+		'import/order': 'error',
+    'sort-imports-es6-autofix/sort-imports-es6': 'error',
 	},
 	overrides: [
 		{

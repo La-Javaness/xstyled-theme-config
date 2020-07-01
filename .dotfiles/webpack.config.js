@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const isWsl = require('is-wsl')
 const webpackNodeExternals = require('webpack-node-externals')
 const path = require('path')
@@ -6,13 +7,12 @@ const webpack = require('webpack')
 
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 const CircularDependencyPlugin = require('circular-dependency-plugin')
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const PnpWebpackPlugin = require('pnp-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter')
 
-const paths = require('./paths')
-const getClientEnvironment = require('./env')
+const paths = require('./config/paths')
+const getClientEnvironment = require('./config/env')
 
 module.exports = function(webpackEnv) {
 	const isEnvDevelopment = webpackEnv === 'development'
@@ -35,7 +35,14 @@ module.exports = function(webpackEnv) {
 			libraryTarget: 'commonjs2',
 		},
 		devtool: isEnvProduction ? (shouldUseSourceMap ? 'source-map' : false) : 'cheap-module-source-map',
-		externals: [webpackNodeExternals(), 'react', 'react-dom', 'styled-components', '@xstyled/core', '@xstyled/styled-components'],
+		externals: [webpackNodeExternals(), {
+			'styled-components': 'styled-components',
+			'@xstyled/styled-components': '@xstyled/styled-components',
+			'@xstyled/core': '@xstyled/core',
+			'@xstyled/system': '@xstyled/system',
+			'@xstyled-theme/cli': '@xstyled-theme/cli',
+			'@xstyled-theme/config': '@xstyled-theme/config',
+		}].filter(Boolean),
 		optimization: {
 			minimize: isEnvProduction,
 			minimizer: [
@@ -98,13 +105,13 @@ module.exports = function(webpackEnv) {
 									exclude: /node_modules/,
 									use: [
 										{
+											loader: require.resolve('babel-loader'),
+										},
+										{
 											loader: require.resolve('ts-loader'),
 										},
 										useReact && {
 											loader: require.resolve('react-docgen-typescript-loader'),
-										},
-										{
-											loader: require.resolve('babel-loader'),
 										},
 									].filter(Boolean),
 							  }
@@ -133,7 +140,7 @@ module.exports = function(webpackEnv) {
 			isEnvDevelopment && new CaseSensitivePathsPlugin(),
 			new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
 			useTypeScript &&
-				new ForkTsCheckerWebpackPlugin({
+				new require.resolve('fork-ts-checker-webpack-plugin')({
 					typescript: resolve.sync('typescript', {
 						basedir: paths.appNodeModules,
 					}),
@@ -163,8 +170,10 @@ module.exports = function(webpackEnv) {
 				}),
 			},
 			extensions: ['.tsx', '.ts', '.jsx', '.js', '.mjs'],
-			modules: [path.resolve(__dirname, 'src'), path.resolve(__dirname, 'node_modules'), 'node_modules'],
+			modules: [path.resolve(__dirname, 'app'), path.resolve(__dirname, 'node_modules'), 'node_modules'],
 			plugins: [PnpWebpackPlugin],
 		},
 	}
 }
+
+	

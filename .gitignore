@@ -9,6 +9,8 @@
 # NPM
 node_modules
 package-lock.json
+/.pnp
+.pnp.js
 
 # Logs
 npm-debug.log*
@@ -31,7 +33,6 @@ ljn-dotfiles-*.log
 
 # Jest and generic test utilities
 /coverage/
-__snapshots__/
 
 # Cypress
 /cypress/screenshots
