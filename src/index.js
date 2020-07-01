@@ -40,7 +40,7 @@ export default {
 
 			if (options.externals) {
 				xtConfig.externals = [
-					config.externals || false,
+					...(Array.isArray(config.externals) ? config.externals : [config.externals || false]),
 					{
 						react: 'react',
 						'react-dom': 'react-dom',
