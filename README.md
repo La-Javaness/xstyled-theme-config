@@ -1,6 +1,6 @@
 # @xstyled-theme/config
 
-![https://img.shields.io/circleci/project/github/La-Javaness/xstyled-theme-config.svg](https://img.shields.io/circleci/project/github/La-Javaness/xstyled-theme-config.svg)
+![https://img.shields.io/github/workflow/status/La-Javaness/xstyled-theme-config/Release](https://github.com/La-Javaness/xstyled-theme-config/actions?query=workflow%3ARelease)
 ![https://www.npmjs.com/package/@xstyled-theme/config](https://img.shields.io/npm/v/@xstyled-theme/config.svg)
 
 This package helps your project link to a `@xstyled-theme` theme. It provides configuration hooks for Webpack and Jest, so that the import alias `~theme` in your code is resolved to the location of your current theme.
