@@ -25,7 +25,7 @@
 	"homepage": "https://github.com/La-Javaness/xstyled-theme-config#readme",
 	"scripts": {
 		"build": "node scripts/build.js",
-		"build:ci": "cross-env CI=true yarn build:prod",
+		"build:ci": "cross-env CI=true yarn build",
 		"lint": "yarn eslint --ext .js,.jsx src",
 		"lint:fix": "yarn lint --fix",
 		"prepublishOnly": "yarn test:ci && yarn build:ci",
