@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.0.2...v1.0.3) (2020-07-03)
+
+
+### Bug Fixes
+
+* Add babel-loader when building ([c02630f](https://github.com/La-Javaness/xstyled-theme-config/commit/c02630f9a7e0c70cfea39e193cab1ce447dd97ed))
+
 ## [1.0.2](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.0.1...v1.0.2) (2020-07-03)
 
 
