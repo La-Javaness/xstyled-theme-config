@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.0.4...v1.0.5) (2020-07-03)
+
+
+### Bug Fixes
+
+* Fix badges in README ([192008a](https://github.com/La-Javaness/xstyled-theme-config/commit/192008a24e88b507ac11a469b6fb2740d7ae47b0))
+
 ## [1.0.4](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.0.3...v1.0.4) (2020-07-03)
 
 
