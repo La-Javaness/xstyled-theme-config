@@ -110,6 +110,7 @@
 		"styled-components": "^4.4.1"
 	},
 	"publishConfig": {
-		"registry": "https://npm.lajavaness.com"
+		"registry": "https://npm.lajavaness.com",
+    "access": "public"
 	}
 }

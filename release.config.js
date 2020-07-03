@@ -1,10 +1,9 @@
 module.exports = {
-	branches: ['release'],
+	branches: ['master'],
 	plugins: [
 		'@semantic-release/commit-analyzer',
 		'@semantic-release/release-notes-generator',
 		'@semantic-release/changelog',
-		'@semantic-release/npm',
 		[
 			'@semantic-release/git',
 			{
@@ -18,6 +17,7 @@ module.exports = {
 				assets: ['build/*', 'package.json', 'yarn.lock'],
 			},
 		],
+		'@semantic-release/npm',
 	],
 	repositoryUrl: 'git@github.com:La-Javaness/xstyled-theme-config.git',
 }
