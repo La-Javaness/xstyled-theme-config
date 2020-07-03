@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.0.0...v1.0.1) (2020-07-03)
+
+
+### Bug Fixes
+
+* Move some dependencies to peer deps ([39650e5](https://github.com/La-Javaness/xstyled-theme-config/commit/39650e5bf725ff3408a44a1e52ce635129bea72a))
+
 # 1.0.0 (2020-07-03)
 
 
