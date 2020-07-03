@@ -3,6 +3,13 @@
  * If you want to add setup code to your Jest tests, write them to
  * `src/setupTests.js`, and they'll be automatically included. */
 
-import 'jest-styled-components'
 
 
+
+/* resizeWindow */
+export const resizeWindow = (x, y) => {
+	window.innerWidth = x
+	window.innerHeight = y
+	window.dispatchEvent(new Event('resize'))
+}
+/* END resizeWindow */

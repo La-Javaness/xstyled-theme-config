@@ -36,12 +36,7 @@ module.exports = function(webpackEnv) {
 		},
 		devtool: isEnvProduction ? (shouldUseSourceMap ? 'source-map' : false) : 'cheap-module-source-map',
 		externals: [webpackNodeExternals(), {
-			'styled-components': 'styled-components',
-			'@xstyled/styled-components': '@xstyled/styled-components',
-			'@xstyled/core': '@xstyled/core',
-			'@xstyled/system': '@xstyled/system',
-			'@xstyled-theme/cli': '@xstyled-theme/cli',
-			'@xstyled-theme/config': '@xstyled-theme/config',
+
 		}].filter(Boolean),
 		optimization: {
 			minimize: isEnvProduction,
@@ -170,7 +165,7 @@ module.exports = function(webpackEnv) {
 				}),
 			},
 			extensions: ['.tsx', '.ts', '.jsx', '.js', '.mjs'],
-			modules: [path.resolve(__dirname, 'app'), path.resolve(__dirname, 'node_modules'), 'node_modules'],
+			modules: [path.resolve(__dirname, '..', 'src'), path.resolve(__dirname, '..', 'node_modules'), 'node_modules'],
 			plugins: [PnpWebpackPlugin],
 		},
 	}

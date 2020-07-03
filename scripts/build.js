@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-process.env.BABEL_ENV = 'production'
-process.env.NODE_ENV = 'production'
+process.env.BABEL_ENV = process.env.BABEL_ENV || 'production'
+process.env.NODE_ENV = process.env.NODE_ENV || 'production'
 process.on('unhandledRejection', (err) => {
 	throw err
 })
@@ -32,7 +32,7 @@ function copyPublicFolder() {
 }
 
 function build(config, previousFileSizes) {
-	console.log('Creating an optimized production build...')
+	console.log(`Creating an optimized ${process.env.NODE_ENV} build...`)
 
 	const compiler = webpack(config)
 	return new Promise((resolve, reject) => {
