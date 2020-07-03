@@ -23,6 +23,8 @@ module.exports = {
 			},
 		],
 		'@semantic-release/npm',
+		['@saithodev/semantic-release-backmerge', { 'branchName': 'develop' }]
+  ]
 	],
 	repositoryUrl: 'git@github.com:La-Javaness/xstyled-theme-config.git',
 }
