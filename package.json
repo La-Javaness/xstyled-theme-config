@@ -48,14 +48,11 @@
 		"core-js": "3"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.10.4",
 		"@babel/plugin-proposal-class-properties": "^7.10.4",
 		"@babel/plugin-proposal-export-default-from": "^7.10.4",
 		"@babel/plugin-proposal-object-rest-spread": "^7.9.6",
 		"@babel/plugin-transform-runtime": "^7.10.4",
 		"@babel/polyfill": "^7.10.4",
-		"@babel/preset-env": "^7.10.4",
-		"@babel/preset-typescript": "^7.10.1",
 		"@babel/types": "^7.10.0",
 		"@commitlint/cli": "^9.0.1",
 		"@commitlint/config-conventional": "^9.0.1",
@@ -70,7 +67,6 @@
 		"@xstyled/styled-components": "^1.17.1",
 		"@xstyled/system": "^1.17.1",
 		"babel-jest": "^26.1.0",
-		"babel-loader": "^8.1.0",
 		"babel-plugin-styled-components": "^1.10.7",
 		"browserslist": "^4.12.2",
 		"case-sensitive-paths-webpack-plugin": "^2.3.0",
@@ -114,8 +110,12 @@
 		"webpack-node-externals": "^1.7.2"
 	},
 	"peerDependencies": {
+		"@babel/core": "^7.10.4",
+		"@babel/preset-env": "^7.10.4",
+		"@babel/preset-typescript": "^7.10.1",
 		"@xstyled/styled-components": "^1.17.1",
 		"@xstyled/system": "^1.17.1",
+		"babel-loader": "^8.1.0",
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6",
 		"styled-components": "^4.4.1"
