@@ -44,10 +44,7 @@
 		"typescript": "3.7"
 	},
 	"dependencies": {
-		"@babel/preset-env": "^7.10.4",
-		"@babel/preset-typescript": "^7.10.1",
 		"@babel/runtime": "^7.10.4",
-		"babel-loader": "^8.1.0",
 		"core-js": "3"
 	},
 	"devDependencies": {
@@ -57,6 +54,8 @@
 		"@babel/plugin-proposal-object-rest-spread": "^7.9.6",
 		"@babel/plugin-transform-runtime": "^7.10.4",
 		"@babel/polyfill": "^7.10.4",
+		"@babel/preset-env": "^7.10.4",
+		"@babel/preset-typescript": "^7.10.1",
 		"@babel/types": "^7.10.0",
 		"@commitlint/cli": "^9.0.1",
 		"@commitlint/config-conventional": "^9.0.1",
@@ -71,6 +70,7 @@
 		"@xstyled/styled-components": "^1.17.1",
 		"@xstyled/system": "^1.17.1",
 		"babel-jest": "^26.1.0",
+		"babel-loader": "^8.1.0",
 		"babel-plugin-styled-components": "^1.10.7",
 		"browserslist": "^4.12.2",
 		"case-sensitive-paths-webpack-plugin": "^2.3.0",
