@@ -70,6 +70,7 @@
 		"@xstyled/styled-components": "^1.17.1",
 		"@xstyled/system": "^1.17.1",
 		"babel-jest": "^26.1.0",
+		"babel-loader": "^8.1.0",
 		"babel-plugin-styled-components": "^1.10.7",
 		"browserslist": "^4.12.2",
 		"case-sensitive-paths-webpack-plugin": "^2.3.0",
