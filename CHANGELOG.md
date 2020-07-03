@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.0.3...v1.0.4) (2020-07-03)
+
+
+### Bug Fixes
+
+* Fix typo in README ([d981fd5](https://github.com/La-Javaness/xstyled-theme-config/commit/d981fd5eda390898a5799216bb7e96f3565eab63))
+
 ## [1.0.3](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.0.2...v1.0.3) (2020-07-03)
 
 
