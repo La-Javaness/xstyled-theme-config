@@ -42,7 +42,7 @@ Next, ensure your `package.json` file uses the `react-app-rewired` wrapper to le
   "scripts": {
     "build": "react-app-rewired build",
     "start": "react-app-rewired start",
-    "test": "react-app-rewired test"## Usage
+    "test": "react-app-rewired test"
 
   },
 ```
