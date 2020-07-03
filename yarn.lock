@@ -1656,17 +1656,6 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@saithodev/semantic-release-backmerge@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@saithodev/semantic-release-backmerge/-/semantic-release-backmerge-1.1.1.tgz#3023d127f8cf23ff06ec9d65d61a0d66596f3718"
-  integrity sha512-J1z/QHVrsoeAMvlw3DDS41I3RzDscrqHyIEAjGwSyD8SpBhzTe4JiFXoKFCeD/LNs+BwvB+5XDpD1xwcKcpg6A==
-  dependencies:
-    "@semantic-release/error" "^2.2.0"
-    aggregate-error "^3.0.1"
-    debug "^4.1.1"
-    execa "^4.0.0"
-    lodash "^4.17.15"
-
 "@semantic-release/changelog@^5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@semantic-release/changelog/-/changelog-5.0.1.tgz#50a84b63e5d391b7debfe021421589fa2bcdafe4"
@@ -2296,7 +2285,7 @@ agentkeepalive@^3.4.1:
   dependencies:
     humanize-ms "^1.2.1"
 
-aggregate-error@^3.0.0, aggregate-error@^3.0.1:
+aggregate-error@^3.0.0:
   version "3.0.1"
   resolved "https://npm.lajavaness.com:443/aggregate-error/-/aggregate-error-3.0.1.tgz#db2fe7246e536f40d9b5442a39e117d7dd6a24e0"
   integrity sha512-quoaXsZ9/BLNae5yiNoUz+Nhkwz83GhWwtYFglcjEQB2NDHCIpApbqXxIFnm4Pq/Nvhrsq5sYJFyohrrxnTGAA==
