@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.0.1...v1.0.2) (2020-07-03)
+
+
+### Bug Fixes
+
+* Keep babel preset around for Jest to run ([4603e9a](https://github.com/La-Javaness/xstyled-theme-config/commit/4603e9a8548c30c9d9a9855b0a680831f9771bb2))
+
 ## [1.0.1](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.0.0...v1.0.1) (2020-07-03)
 
 
