@@ -1,11 +1,19 @@
+import path from 'path'
+
 export default {
-	withXstyledThemeWebpack: (
-		themeName,
-		options = {
-			externals: false,
-		}
-	) => {
+	withXstyledThemeWebpack: (themeName, userOptions = {}) => {
 		return (config) => {
+			const defaultOptions = {
+				externals: false,
+				projectDir: './',
+				forceLocalStyledComponents: !userOptions.externals,
+			}
+
+			const options = {
+				...defaultOptions,
+				...userOptions,
+			}
+
 			const xtConfig = {
 				...config,
 			}
@@ -38,6 +46,12 @@ export default {
 				'~theme': `${themeName}/dist`,
 			}
 
+			if (options.forceLocalStyledComponents) {
+				xtConfig.resolve.alias['styled-components'] = path.resolve(
+					path.join(options.projectDir, 'node_modules', 'styled-components')
+				)
+			}
+
 			if (options.externals) {
 				xtConfig.externals = [
 					...(Array.isArray(config.externals) ? config.externals : [config.externals || false]),
@@ -48,6 +62,7 @@ export default {
 						'@xstyled/core': '@xstyled/core',
 						'@xstyled/styled-components': '@xstyled/styled-components',
 						'@xstyled/system': '@xstyled/system',
+						'@xstyled-theme/system': '@xstyled-theme/system',
 					},
 					(context, request, callback) => {
 						if (request.startsWith('~theme')) {
