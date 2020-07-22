@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.0.5...v1.1.0) (2020-07-22)
+
+
+### Features
+
+* Help avoid styled-components duplication in apps ([9d7915d](https://github.com/La-Javaness/xstyled-theme-config/commit/9d7915d962228796c2ee50920b123999113dd4cc))
+
 ## [1.0.5](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.0.4...v1.0.5) (2020-07-03)
 
 
