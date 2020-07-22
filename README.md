@@ -150,7 +150,7 @@ module.exports = {
 
 ### Jest transformIgnorePatterns
 
-It's very common to find, in Jest configs, a line that prevents transformation of dependencies found in node_modules, through the [transformIgnorePatterns](TODO) option. Unfortunately, `@xstyled-theme` provides Typescript files which must be transformed, so this approach is unsuitable. We automatically remove the following lines from `transformIgnorePatterns` to avoid a compatibility issue:
+It's very common to find, in Jest configs, a line that prevents transformation of dependencies found in node_modules, through the [transformIgnorePatterns](https://jestjs.io/docs/en/configuration) option. Unfortunately, `@xstyled-theme` provides Typescript files which must be transformed, so this approach is unsuitable. We automatically remove the following lines from `transformIgnorePatterns` to avoid a compatibility issue:
 
 * `<rootDir>/node_modules/`
 * `<rootDir>/node_modules`
@@ -186,18 +186,31 @@ module.exports = withXstyledThemeJest(theme, {
 
 ```
 
+## Other Options
 
+### forceLocalStyledComponents
 
+This flag forces the `styled-components` dependency to be resolved to the one in the local project directory, using an alias.
 
+When developing apps that use an `@xstyled-theme` UI toolkit, we noticed that our UI toolkit `styled-components` devDependency would be used rather than the app's runtime dependency. This caused a duplicate `React` instance and broke our app. This can happen in development mode when using symbolic links or NPM links to local packages, or if you accidentally publish your UI toolkit's dependencies folder to NPM.
 
+The `forceLocalStyledComponents` flag is set to `true` when `externals` is unset, and to `false` when `externals` is set to `true`. This way, UI toolkits don't alias `styled-components`, but apps do and force UI toolkits, regardless of their `node_modules` content, to use the same unique instance of `styled-components`.
+
+### projectDir
+
+By default, the project directory will be computed to be where your `package.json` resides. However, if you are calling your build scripts from outside your project root directory, we recommend you manually set the `projectDir` option to the absolute path to your `package.json`, as we cannot compute it as reliably as you in advance.
+
+This is used to compute the `styled-components` alias used when `forceLocalStyledComponents` is set to `true`.
 
 
 
 ## Typescript – Coming Soon
 
-Some aspects are not yet covered in this doc, including support for the `tsconfig.json` file. Please notify the developers if you need help running `@xstyled-theme/config` with TypeScript until this part of the doc is written up.
+Some aspects are not yet covered in this doc, including support for the `tsconfig.json` file. Please notify the developers if you need help running `@xstyled-theme/config` with Typescript until this part of the doc is written up.
 
 We also don't explain yet how to import type declarations from the theme. This will also be documented in the future but is still subject to minor adjustments.
+
+**WARNING**: it is now looking increasingly likely that we drop Typescript support, as we have dropped it in our UI toolkit due to a very long list of grievances, but also because Typescript is causing significant support overload in `@xstyled-theme` and bugs in enum generation based on your theme key names and your icon and font names.
 
 
 
