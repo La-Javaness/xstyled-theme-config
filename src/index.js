@@ -128,12 +128,8 @@ export default {
 
 			xtConfig.roots.push(`<rootDir>/node_modules/${themeName}/dist`)
 
-			// console.log(xtConfig.modulePaths)
-			// xtConfig.modulePaths.push(`<rootDir>`)
-			delete xtConfig.modulePaths // TEMP FIXME improve this
+			delete xtConfig.modulePaths
 
-			console.log('config is')
-			console.log(xtConfig)
 			return xtConfig
 		}
 	},
