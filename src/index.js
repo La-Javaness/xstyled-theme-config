@@ -46,10 +46,25 @@ export default {
 				'~theme': `${themeName}/dist`,
 			}
 
+			// Styled components specifically causes many invalid React hook errors if
+			// we don't make sure it's loaded in a single place. Because of how many
+			// dependencies load up styled-components, we propose to hardcode its resolution.
 			if (options.forceLocalStyledComponents) {
 				xtConfig.resolve.alias['styled-components'] = path.resolve(
 					path.join(options.projectDir, 'node_modules', 'styled-components')
 				)
+			}
+
+			// General version of the above hardcode, forces to prefer the project's
+			// modules directory instead of those in a dependency's own node_modules.
+			// This is useful when you're developing and linking various local packages
+			// as part of your development process.
+			if (!options.externals) {
+				xtConfig.resolve.modules = [
+					...xtConfig.resolve.modules,
+					path.resolve(options.projectDir, 'node_modules'),
+					'node_modules',
+				]
 			}
 
 			if (options.externals) {
@@ -102,12 +117,23 @@ export default {
 						'/node_modules',
 						'node_modules/',
 						'node_modules',
+						'[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$',
 					].includes(pattern)
 			)
 
 			const modulesToTransform = [...options.modulesToTransform, themeName]
 			xtConfig.transformIgnorePatterns.push(`<rootDir>/node_modules/(?!${modulesToTransform.join('|')})`)
 
+			xtConfig.moduleDirectories = ['<rootDir>/node_modules', '<rootDir>/src', 'node_modules']
+
+			xtConfig.roots.push(`<rootDir>/node_modules/${themeName}/dist`)
+
+			// console.log(xtConfig.modulePaths)
+			// xtConfig.modulePaths.push(`<rootDir>`)
+			delete xtConfig.modulePaths // TEMP FIXME improve this
+
+			console.log('config is')
+			console.log(xtConfig)
 			return xtConfig
 		}
 	},
