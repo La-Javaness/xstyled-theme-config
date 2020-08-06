@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.1.0...v1.2.0) (2020-08-06)
+
+
+### Features
+
+* Prioritise root modules dir to avoid edge cases React hook bugs ([1928446](https://github.com/La-Javaness/xstyled-theme-config/commit/1928446d612bafc43c20dfddc6a9aedaa30745f9))
+
 # [1.1.0](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.0.5...v1.1.0) (2020-07-22)
 
 
