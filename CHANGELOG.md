@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.2.0...v1.2.1) (2020-08-06)
+
+
+### Bug Fixes
+
+* Remove debug instructions ([a3a16f5](https://github.com/La-Javaness/xstyled-theme-config/commit/a3a16f5caafc2a4c1039172692d9bd27e6c29f6e))
+
 # [1.2.0](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.1.0...v1.2.0) (2020-08-06)
 
 
