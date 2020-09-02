@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.2.1...v1.2.2) (2020-09-02)
+
+
+### Bug Fixes
+
+* Remove root change that caused an issue SOMEWHERE, BUT WHERE? ([7f60001](https://github.com/La-Javaness/xstyled-theme-config/commit/7f600015d9455979ea89a56aa1777c4a3bcc43bb))
+
 ## [1.2.1](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.2.0...v1.2.1) (2020-08-06)
 
 
