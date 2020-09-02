@@ -126,8 +126,6 @@ export default {
 
 			xtConfig.moduleDirectories = ['<rootDir>/node_modules', '<rootDir>/src', 'node_modules']
 
-			xtConfig.roots.push(`<rootDir>/node_modules/${themeName}/dist`)
-
 			delete xtConfig.modulePaths
 
 			return xtConfig
