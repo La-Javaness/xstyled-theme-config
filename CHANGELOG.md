@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.2.2...v1.3.0) (2020-11-02)
+
+
+### Features
+
+* Port to Webpack 5 alias syntax ([9c02cbd](https://github.com/La-Javaness/xstyled-theme-config/commit/9c02cbdd29351442a14aa8031ddd087469b1328e))
+
 ## [1.2.2](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.2.1...v1.2.2) (2020-09-02)
 
 
