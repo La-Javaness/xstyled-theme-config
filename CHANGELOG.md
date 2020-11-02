@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.3.0...v1.4.0) (2020-11-02)
+
+
+### Features
+
+* Allow null package name for library scenarios ([dbc77b5](https://github.com/La-Javaness/xstyled-theme-config/commit/dbc77b56d8659339692f4dd6a28748edb364b48e))
+
 # [1.3.0](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.2.2...v1.3.0) (2020-11-02)
 
 
