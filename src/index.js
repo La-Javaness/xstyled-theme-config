@@ -79,7 +79,7 @@ export default {
 						'@xstyled/system': '@xstyled/system',
 						'@xstyled-theme/system': '@xstyled-theme/system',
 					},
-					(context, request, callback) => {
+					({ request }, callback) => {
 						if (request.startsWith('~theme')) {
 							return callback(null, request)
 						}
