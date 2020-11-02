@@ -9,7 +9,6 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 const CircularDependencyPlugin = require('circular-dependency-plugin')
 const PnpWebpackPlugin = require('pnp-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
-const typescriptFormatter = require('react-dev-utils/typescriptFormatter')
 
 const paths = require('./config/paths')
 const getClientEnvironment = require('./config/env')
@@ -21,6 +20,11 @@ module.exports = function(webpackEnv) {
 	const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP === 'true'
 	const useTypeScript = false
 	const useReact = false
+
+	let ForkTsCheckerWebpackPlugin
+	if (useTypeScript) {
+		ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+	}
 
 	const env = getClientEnvironment()
 
@@ -35,9 +39,7 @@ module.exports = function(webpackEnv) {
 			libraryTarget: 'commonjs2',
 		},
 		devtool: isEnvProduction ? (shouldUseSourceMap ? 'source-map' : false) : 'cheap-module-source-map',
-		externals: [webpackNodeExternals(), {
-
-		}].filter(Boolean),
+		externals: [webpackNodeExternals(), false].filter(Boolean),
 		optimization: {
 			minimize: isEnvProduction,
 			minimizer: [
@@ -64,8 +66,6 @@ module.exports = function(webpackEnv) {
 						},
 					},
 					parallel: !isWsl,
-					cache: true,
-					sourceMap: shouldUseSourceMap,
 				}),
 			],
 		},
@@ -84,7 +84,6 @@ module.exports = function(webpackEnv) {
 								cache: true,
 								formatter: require.resolve('react-dev-utils/eslintFormatter'),
 								eslintPath: require.resolve('eslint'),
-								resolvePluginsRelativeTo: __dirname,
 							},
 							loader: require.resolve('eslint-loader'),
 						},
@@ -135,7 +134,7 @@ module.exports = function(webpackEnv) {
 			isEnvDevelopment && new CaseSensitivePathsPlugin(),
 			new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
 			useTypeScript &&
-				new require.resolve('fork-ts-checker-webpack-plugin')({
+				new ForkTsCheckerWebpackPlugin({
 					typescript: resolve.sync('typescript', {
 						basedir: paths.appNodeModules,
 					}),
@@ -158,14 +157,13 @@ module.exports = function(webpackEnv) {
 
 		resolve: {
 			alias: {
-				'~theme': 'xstyled-theme-linker',
 				...(isEnvProductionProfile && {
 					'react-dom$': 'react-dom/profiling',
 					'scheduler/tracing': 'scheduler/tracing-profiling',
 				}),
 			},
 			extensions: ['.tsx', '.ts', '.jsx', '.js', '.mjs'],
-			modules: [path.resolve(__dirname, '..', 'src'), path.resolve(__dirname, '..', 'node_modules'), 'node_modules'],
+			modules: [path.resolve(__dirname, '..', 'src'), 'node_modules'],
 			plugins: [PnpWebpackPlugin],
 		},
 	}

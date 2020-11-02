@@ -13,5 +13,13 @@
 	"monorepo": "NO_MONOREPO",
 	"frontOrBack": "FRONTEND",
 	"projectType": "LIBRARY",
-	"styleStack": []
+	"styleStack": [],
+	"repositoryHost": "BITBUCKET",
+	"testRootDir": "src",
+	"withWebpack": true,
+	"withStyledComponents": false,
+	"withXstyled": false,
+	"withXstyledTheme": false,
+	"withSASSLoaders": false,
+	"withCSSLoaders": false
 }
