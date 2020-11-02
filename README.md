@@ -98,6 +98,8 @@ module.exports = {
 
 ### In a UI Toolkit
 
+#### Webpack
+
 UI toolkits need to ensure they do not bundle `React`, `styled-components` or other packages that mustn't be duplicated in the dependency chain. `@xstyled-theme/config` comes with an option to declare such packages as externals. Here is what your `webpack.config.js` could look like:
 
 ```js
@@ -117,6 +119,10 @@ module.exports = async (webpackEnv) => {
 	return withXstyledThemeWebpack(theme, { externals: true })(config)
 }
 ```
+
+You may even pass a `null` value to the `theme` parameter if you only want to get the Webpack externals configured without providing a default theme in your UI library code.
+
+#### Jest
 
 In your `jest.config.js`, you can even use a different theme against which you write your tests (make sure that theme is installed in your development dependencies, though):
 ```js
