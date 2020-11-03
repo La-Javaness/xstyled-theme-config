@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require('path')
 const baseWebpackFile = require('./.dotfiles/webpack.config')
 
 module.exports = async (webpackEnv) => {
@@ -5,9 +7,8 @@ module.exports = async (webpackEnv) => {
 
 	const config = {
 		...baseConfig,
-		node: {
-			global: true,
-		},
+
+		// Add your edits here
 	}
 
 	return config
