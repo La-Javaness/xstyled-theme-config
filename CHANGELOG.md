@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.4.0...v1.4.1) (2020-11-03)
+
+
+### Bug Fixes
+
+* Revert "feat: Port to Webpack 5 alias syntax" ([7c482af](https://github.com/La-Javaness/xstyled-theme-config/commit/7c482aff5470ecd9be9ff3991cc293e6863cb258))
+
 # [1.4.0](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.3.0...v1.4.0) (2020-11-02)
 
 
