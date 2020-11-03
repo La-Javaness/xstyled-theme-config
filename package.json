@@ -1,6 +1,6 @@
 {
 	"name": "@xstyled-theme/config",
-	"version": "1.4.1",
+	"version": "1.4.2",
 	"description": "Tools to add xstyled-theme support to your app's tooling",
 	"license": "MIT",
 	"author": "La Javaness <dev@lajavaness.com>",

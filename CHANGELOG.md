@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.4.1...v1.4.2) (2020-11-03)
+
+
+### Bug Fixes
+
+* Revert "chore: Update LJN tooling" ([196ba76](https://github.com/La-Javaness/xstyled-theme-config/commit/196ba76bd842b8a38eb86fecc3ea0d122e1d1a13))
+
 ## [1.4.1](https://github.com/La-Javaness/xstyled-theme-config/compare/v1.4.0...v1.4.1) (2020-11-03)
 
 
